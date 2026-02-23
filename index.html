@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/6.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONE DESK NOTE </title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="/6.png" alt="Logo" class="logo" />
+        <h1 class="app-title">ONE DESK NOTE</h1>
+      </div>
+      <div class="sidebar-actions">
+        <button id="btn-new-note" class="btn primary-btn">新建笔记</button>
+        <button id="btn-import-note" class="btn secondary-btn">导入 JSON</button>
+        <input type="file" id="import-input" accept=".json" style="display: none;" />
+      </div>
+      <ul id="note-list" class="note-list">
+        </ul>
+    </aside>
+
+    <main class="main-content">
+      <div id="editor-wrapper" class="editor-wrapper hidden">
+        <div class="editor-header">
+          <input type="text" id="note-title" class="title-input" placeholder="请输入笔记标题..." />
+          <div class="editor-actions">
+            <button id="btn-export-note" class="btn action-btn">导出 JSON</button>
+            <button id="btn-delete-note" class="btn danger-btn">删除笔记</button>
+          </div>
+        </div>
+        
+        <div class="toolbar" id="toolbar">
+          <button class="tool-btn" data-command="bold" title="加粗"><b>B</b></button>
+          <button class="tool-btn" data-command="italic" title="斜体"><i>I</i></button>
+          <button class="tool-btn" data-command="underline" title="下划线"><u>U</u></button>
+          <button class="tool-btn" data-command="strikeThrough" title="删除线"><s>S</s></button>
+          <div class="divider"></div>
+          <button class="tool-btn" id="btn-insert-image" title="插入图片">🖼️</button>
+          <input type="file" id="image-input" accept="image/*" style="display: none;" />
+        </div>
+
+        <div id="editor-content" class="editor-content" contenteditable="true" placeholder="开始记录你的想法..."></div>
+      </div>
+      
+      <div id="empty-state" class="empty-state">
+        <img src="/6.png" alt="Empty" class="empty-logo" />
+        <p>选择一个笔记或创建新笔记</p>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
